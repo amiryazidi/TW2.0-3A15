@@ -1,0 +1,20 @@
+<h1> Bonjour {{n | upper}}</h1>
+
+{% set x=6 %}
+
+{{x}}
+
+{{dump(auth)}}
+
+{% for t in auth %}
+    {{t.username}}
+    <img src="{{t.picture}}" >
+    {% if(t.nb_books>0) %}
+    <input type="submit" value="register">
+    {% endif %}
+    <a href="{{path('d',{'id':t.username})}}">details </a>
+    {% else %}
+    tableau vide 
+
+{% endfor %}
+{{auth[0].username}}
